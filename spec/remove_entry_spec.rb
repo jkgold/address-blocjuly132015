@@ -23,8 +23,8 @@ RSpec.describe RemoveEntry do
    			remove_entry = remove.entries[0]
 
    			expect(remove_entry.name).to eq "Ada Lovelace"
-   			expect(remove_entry.phone_number).to eq '010,012,1815'
+   			expect(remove_entry.phone_number).to eq '010.012.1815'
    			expect(remmove_entry.email).to eq 'augusta.king@lovelace.com'
    		end
    	end
-end
+   end

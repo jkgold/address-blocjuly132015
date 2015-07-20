@@ -13,8 +13,9 @@
      puts "1 - View all entries"
      puts "2 - Create an entry"
      puts "3 - Search for an entry"
-     puts "4 - Import entries from a CSV"
-     puts "5 - Exit"
+     puts "4 - View Entry Number n"
+     puts "5 - Import entries from a CSV"
+     puts "6 - Exit"
      print "Enter your selection: "
  
  # #3
@@ -32,11 +33,16 @@
      	system "clear"
      	search_entries
      	main_menu
-     when 4 
+     when 4
+     	system "clear"
+     	view_entry_number_n
+     	main_menu
+
+     when 5
      	system "clear"
      	read_csv
      	main_menu
-     when 5 
+     when 6 
      	puts "Good-bye!"
 
      	exit(0)
@@ -79,9 +85,29 @@
  		puts "New entry created"
    end
 
+   def remove_entry(entry)
+
+      system "clear"
+      print "Are you sure you want to delete this entry?"
+
+      @address_book.delete_entry(entry)
+
+      system "clear"
+      print "Entry removed"
+   end
 
 
  	def search_entries
+   end
+
+    def view_entry_number_n
+    	system "clear"
+    	puts "Enter Entry Number"
+
+    	print "Number: "
+    	ind  = gets.chomp
+
+      puts @address_book.entries[ind]
    end
 
  	def read_csv
@@ -101,6 +127,9 @@
    	when "n"
 
    	when "d"
+      system "clear"
+      remove_entry(entry)
+
    	when "e"
 
    	when "m"
@@ -111,5 +140,7 @@
    		puts "#{selection} is not a vaild input"
    		entries_submenu(entry)
  	end
-   end
  end
+end
+
+  

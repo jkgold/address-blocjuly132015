@@ -16,4 +16,10 @@ class AddressBook
 		end
 		@entries.insert(index, Entry.new(name, phone, email))
 	end
-  end
+	def delete_entry(entry)
+
+		@entries.delete(entry)
+
+	end
+end
+
