@@ -1,10 +1,11 @@
 require_relative "entry.rb"
 
 class AddressBook
-	attr_accessor :entries
+	attr_accessor :entries, :entry
   
   def initialize
   	@entries = []
+  	@entry = entry
 	end
 	def add_entry(name, phone, email)
 		index = 0
@@ -16,7 +17,7 @@ class AddressBook
 		end
 		@entries.insert(index, Entry.new(name, phone, email))
 	end
-	def delete_entry(entry)
+	def remove_entry(entry)
 
 		@entries.delete(entry)
 
