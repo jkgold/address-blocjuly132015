@@ -1,4 +1,5 @@
- require_relative "../models/address_book"
+  # #1
+  require_relative "../models/address_book"
  
  class MenuController
    attr_accessor :address_book
@@ -35,8 +36,8 @@
      	main_menu
      when 4
      	system "clear"
-     	view_entry_number_n
-     	main_menu
+     	find_index
+      main_menu
 
      when 5
      	system "clear"
@@ -90,7 +91,7 @@
       system "clear"
       print "Are you sure you want to delete this entry?"
 
-      @address_book.delete_entry(entry)
+    @address_book.delete_entry(entry)
 
       system "clear"
       print "Entry removed"
@@ -100,15 +101,24 @@
  	def search_entries
    end
 
-    def view_entry_number_n
-    	system "clear"
+    def find_index
+
+    	
+      system "clear"
     	puts "Enter Entry Number"
 
-    	print "Number: "
-    	ind  = gets.chomp
+      num = gets.chomp.to_i
 
-      puts @address_book.entries[ind]
+    	puts "You entered #{num}"
+      index = num
+    @address_book.index
+      system "clear"
+      puts index.to_ind
+     
    end
+  end
+
+
 
  	def read_csv
    end
@@ -139,8 +149,14 @@
    		system "clear"
    		puts "#{selection} is not a vaild input"
    		entries_submenu(entry)
- 	end
- end
-end
+ 	  end
+  end
+
+
+
+
+ 
+
+
 
   
