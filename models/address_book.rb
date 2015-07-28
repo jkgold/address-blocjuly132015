@@ -2,11 +2,10 @@ require_relative "entry"
 require "csv"
 
 class AddressBook
-	attr_accessor :entries, :entry
+	attr_accessor :entries
   
     def initialize
   	@entries = []
-  	@entry = entry
 	end
 	
 	def add_entry(name, phone, email)
@@ -20,10 +19,6 @@ class AddressBook
 		# @address_book.add_entry(name, phone, email)
 		@entries.insert(index, Entry.new(name, phone, email))
 	end
-<<<<<<< HEAD
-=======
-	def remove_entry(entry)
->>>>>>> master
 
 	def import_from_csv(file_name)
      csv_text = File.read(file_name)
