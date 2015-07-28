@@ -111,9 +111,11 @@
 
     	puts "You entered #{num}"
       index = num
-    @address_book.index
+    
       system "clear"
-      puts index.to_ind
+        @address_book.entries.index(index)
+        puts "Name: #{@name}\nPhone Number: #{@phone_number}\nEmail: #{@email},\nIndex: #{index}"
+
      
    end
   end
